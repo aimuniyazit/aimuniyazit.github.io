@@ -269,8 +269,8 @@ body {
 
 .gov-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 0px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
   margin-top: -30px;
 }
 
@@ -338,8 +338,8 @@ body {
 /* System Lists */
 .system-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
   margin-top: 16px;
 }
 
@@ -364,15 +364,17 @@ body {
 .gov-item::before {
   content: "";
   position: absolute;
-  top: 8px;
-  left: 8px;
-  right: 8px;
-  height: 3px;
-  background: linear-gradient(90deg,
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  height: 4px;
+  /*if nak remove animation*/
+  /*background: linear-gradient(90deg,
       var(--primary-color),
-      var(--secondary-color));
+      var(--secondary-color));*/
   transform: scaleX(0);
   transition: transform var(--transition-normal);
+  border-radius: 2px;
 }
 
 .gov-item:hover::before {
@@ -624,12 +626,12 @@ body {
 
   .gov-grid {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 16px;
+    gap: 5px;
   }
 
   .system-list {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 12px;
+    gap: 5px;
   }
 
   .footer-content {
@@ -658,11 +660,12 @@ body {
 
   .gov-grid {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 12px;
+    gap: 5px;
   }
 
   .system-list {
     grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 5px;
   }
 
   .gov-item {
@@ -729,11 +732,35 @@ body {
 @media (max-width: 768px) {
   .gov-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+
+  .system-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
   }
 }
 
 @media (max-width: 576px) {
   .gov-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+
+  .system-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gov-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+
+  .system-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
   }
 }
