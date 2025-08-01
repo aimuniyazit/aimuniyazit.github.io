@@ -1,422 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intranet Hospital Sultanah Bahiyah</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3b82f6',
-                        secondary: '#64748b'
-                    },
-                    spacing: {
-                        '40': '160px'
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 
-<body class="bg-gray-50 min-h-screen">
-    <!-- Header -->
-    <header
-        class="bg-gradient-to-r from-blue-50 via-white to-blue-50 backdrop-blur-md shadow-lg border-b border-blue-200/30 sticky top-0 z-50 transition-all duration-300 relative overflow-hidden">
-        <!-- Subtle animated background pattern -->
-        <div
-            class="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-transparent to-blue-600/5 animate-pulse opacity-50">
-        </div>
-
-        <!-- Main header content -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo/Brand Section -->
-                <div class="flex items-center space-x-4">
-                    <div
-                        class="w-12 h-12 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-xl flex items-center justify-center shadow-lg transform hover:scale-105 transition-all duration-300 group ring-2 ring-blue-200/50">
-                        <span class="material-icons text-white text-2xl drop-shadow-sm">
-                            <img src="images/logohsb.png" alt="hsb" class="w-full h-full object-contain"></span>
-
-                    </div>
-                    <div class="hidden sm:block">
-                        <h1
-                            class="text-2xl font-bold bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent tracking-tight drop-shadow-sm">
-                            Intranet</h1>
-                        <p class="text-sm text-blue-600/80 font-medium tracking-wide">Hospital Sultananah Bahiyah (HSB)
-                        </p>
-                    </div>
+<body>
+    <header class="main-header">
+        <div class="container clearfix">
+            <a href="index.html" class="header-brand">
+                <div class="logo-icon">
+                    <img src="images/logohsb.png" alt="Logo Hospital Sultanah Bahiyah">
                 </div>
-
-                <!-- Center Title for Mobile -->
-                <div class="sm:hidden">
-                    <h1
-                        class="text-xl font-bold bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent">
-                        Intranet HSB</h1>
+                <div class="brand-text">
+                    <h1>Intranet HSB</h1>
                 </div>
-            </div>
-        </div>
+            </a>
 
-        <!-- Bottom accent line -->
-        <div
-            class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500 opacity-60">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#section-a">Sistem Dalaman</a></li>
+                    <li><a href="#section-b">Sistem KKM</a></li>
+                    <li><a href="#section-c">Sistem Kerajaan</a></li>
+                </ul>
+            </nav>
         </div>
-
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <!-- Section A -->
-        <section class="mb-12">
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div
-                    class="flex items-center justify-between mb-6 p-6 bg-gradient-to-r from-blue-50 to-gray-50 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300">
-                    <div class="flex items-center space-x-4">
-                        <div
-                            class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform duration-300" style="background-color: #5c1a4d;">
-                            <span class="material-icons text-white text-2xl">account_balance</span>
-                        </div>
-                        <div>
-                            <h2 class="text-xl font-bold text-gray-800 tracking-tight">Sistem Dalaman HSB</h2>
-                            <p class="text-sm text-gray-500">Portal Sistem Dalaman</p>
-                        </div>
-                    </div>
+    <main class="container">
+        <section id="section-a" class="card">
+            <div class="card-header">
+                <div class="card-icon" style="background-color: #5c1a4d;">
+                    <img src="icons/icons8-department-shop-48.png" alt="Sistem Dalaman Icon">
                 </div>
-
-                <!-- Icon grid -->
-                <div class="grid grid-cols-6 justify-items-center" style="gap: 5px;">
-                    <!-- Row 1 -->
-                    <div class="app-icon" onclick="openLink('https://jknkedah.moh.gov.my/hsb/')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_hsb.png" alt="hsb" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('https://jknkedah.moh.gov.my/hsb/edirektori/')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_edirektori.png" alt="direktori" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://astwh0004/e-latihan')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_elatihan.png" alt="latihan" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://astwh0004/wardbooking1/view/index.php')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_wardbooking.png" alt="wardbooking" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://ast-intranet2/wardbooking1/intra-wad')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_intra.png" alt="medicalintra" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://astwh0004/e-wheelchair/login/index.php')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_ewheelchair.png" alt="wheelchair" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <!-- Row 2 -->
-                    <div class="app-icon" onclick="openLink('http://ast-vlib')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_libhsb.png" alt="libraryhsb" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://astwh0004/e-cap/')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_ecap.png" alt="ecap" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://astwh0004/e-anjungkasih/login/index.php')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_anjungkasih.png" alt="anjungkasih" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://ast-intranet2/unmanagedspecimen/login/')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_specimen.png" alt="specimen" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://ast-intranet/internalauditpatologi')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_auditpato.png" alt="auditpatologi" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <!-- Row 3 -->
-                    <div class="app-icon" onclick="openLink('https://sites.google.com/moh.gov.my/patologihsb')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_manupato.png" alt="manualpatologi" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('https://forms.gle/NGWN777y5cKLJjJG7')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_sekolah.png" alt="sekolah" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('https://ast-zfp.ast.hict.gov.my/zfp')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_zfp.png" alt="zfp" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://astwh0004/intranet/zfp.pdf')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/in_zfpguide.png" alt="zfpguide" class="w-full h-full object-contain">
-                        </div>
-                    </div>
+                <div>
+                    <h2>Sistem Dalaman HSB</h2>
+                    <p class="subtitle">Portal Sistem Dalaman</p>
                 </div>
+            </div>
+            <div class="icon-grid clearfix">
+                <div class="app-icon" onclick="openLink('https://jknkedah.moh.gov.my/hsb/')"><img
+                        src="images/in_hsb.png" alt="HSB"></div>
+                <div class="app-icon" onclick="openLink('https://jknkedah.moh.gov.my/hsb/edirektori/')"><img
+                        src="images/in_edirektori.png" alt="eDirektori"></div>
+                <div class="app-icon" onclick="openLink('http://astwh0004/e-latihan')"><img src="images/in_elatihan.png"
+                        alt="e-Latihan"></div>
+                <div class="app-icon" onclick="openLink('http://astwh0004/wardbooking1/view/index.php')"><img
+                        src="images/in_wardbooking.png" alt="Ward Booking"></div>
+                <div class="app-icon" onclick="openLink('http://ast-intranet2/wardbooking1/intra-wad')"><img
+                        src="images/in_intra.png" alt="Intra-Wad"></div>
+                <div class="app-icon" onclick="openLink('http://astwh0004/e-wheelchair/login/index.php')"><img
+                        src="images/in_ewheelchair.png" alt="e-Wheelchair"></div>
+                <div class="app-icon" onclick="openLink('http://ast-vlib')"><img src="images/in_libhsb.png"
+                        alt="Library HSB"></div>
+                <div class="app-icon" onclick="openLink('http://astwh0004/e-cap/')"><img src="images/in_ecap.png"
+                        alt="e-CAP"></div>
+                <div class="app-icon" onclick="openLink('http://astwh0004/e-anjungkasih/login/index.php')"><img
+                        src="images/in_anjungkasih.png" alt="e-Anjung Kasih"></div>
+                <div class="app-icon" onclick="openLink('http://ast-intranet2/unmanagedspecimen/login/')"><img
+                        src="images/in_specimen.png" alt="Unmanaged Specimen"></div>
+                <div class="app-icon" onclick="openLink('http://ast-intranet/internalauditpatologi')"><img
+                        src="images/in_auditpato.png" alt="Audit Patologi"></div>
+                <div class="app-icon" onclick="openLink('https://sites.google.com/moh.gov.my/patologihsb')"><img
+                        src="images/in_manupato.png" alt="Manual Patologi"></div>
+                <div class="app-icon" onclick="openLink('https://forms.gle/NGWN777y5cKLJjJG7')"><img
+                        src="images/in_sekolah.png" alt="Sekolah"></div>
+                <div class="app-icon" onclick="openLink('https://ast-zfp.ast.hict.gov.my/zfp')"><img
+                        src="images/in_zfp.png" alt="ZFP"></div>
+                <div class="app-icon" onclick="openLink('http://astwh0004/intranet/zfp.pdf')"><img
+                        src="images/in_zfpguide.png" alt="ZFP Guide"></div>
             </div>
         </section>
 
-        <!-- Section B -->
-        <section class="mb-12">
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div
-                    class="flex items-center justify-between mb-6 p-6 bg-gradient-to-r from-blue-50 to-gray-50 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300">
-                    <div class="flex items-center space-x-4">
-                        <div
-                            class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform duration-300" style="background-color: #008080;">
-                            <span class="material-icons text-white text-2xl">dashboard</span>
-                        </div>
-                        <div>
-                            <h2 class="text-xl font-bold text-gray-800 tracking-tight">Sistem KKM</h2>
-                            <p class="text-sm text-gray-500">Portal Sistem KKM</p>
-                        </div>
-                    </div>
+        <section id="section-b" class="card">
+            <div class="card-header">
+                <div class="card-icon" style="background-color: #008080;">
+                    <img src="icons/icons8-dashboard-48.png" alt="Sistem KKM Icon">
                 </div>
-                <div class="grid grid-cols-6" style="gap: 5px;">
-                    <!-- Row 1 -->
-                    <div class="app-icon" onclick="openLink('http://casemix.moh.gov.my')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/kkm_casemix.png" alt="casemix" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://www.mycpd2.moh.gov.my')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/kkm_mycpd.png" alt="mycpd" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://sph.moh.gov.my')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/kkm_sph.png" alt="sph" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://enotifikasi.moh.gov.my/Login.aspx')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/kkm_enoti.png" alt="enotifikasi" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('https://vlib.ovidds.com/')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/kkm_libkkm.png" alt="librarykkm" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://spikpa.moh.gov.my/Home/SenaraiIns.aspx')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/kkm_spikpa.png" alt="spikpa" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <!-- Row 2 -->
-                    <div class="app-icon" onclick="openLink('https://myhdw.moh.gov.my')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/kkm_smrp.png" alt="smrp" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('https://bbis.moh.gov.my/#/login')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/kkm_bbis.png" alt="bbis" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('https://wardviewer.bbis.moh.gov.my/#/login')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/kkm_wardbbis.png" alt="wardbbis" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('https://stbp.moh.gov.my/index.php/auth/main_login')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/kkm_stbp.png" alt="stbp" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('https://phcmalaysia.com/isprint-2-0/')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/kkm_isprint.png" alt="isprint" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://epatuhv2.moh.gov.my/login')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/kkm_epatuh.png" alt="epatuh" class="w-full h-full object-contain">
-                        </div>
-                    </div>
+                <div>
+                    <h2>Sistem KKM</h2>
+                    <p class="subtitle">Portal Sistem KKM</p>
                 </div>
+            </div>
+            <div class="icon-grid clearfix">
+                <div class="app-icon" onclick="openLink('http://casemix.moh.gov.my')"><img src="images/kkm_casemix.png"
+                        alt="Casemix"></div>
+                <div class="app-icon" onclick="openLink('http://www.mycpd2.moh.gov.my')"><img src="images/kkm_mycpd.png"
+                        alt="myCPD"></div>
+                <div class="app-icon" onclick="openLink('http://sph.moh.gov.my')"><img src="images/kkm_sph.png"
+                        alt="SPH"></div>
+                <div class="app-icon" onclick="openLink('http://enotifikasi.moh.gov.my/Login.aspx')"><img
+                        src="images/kkm_enoti.png" alt="e-Notifikasi"></div>
+                <div class="app-icon" onclick="openLink('https://vlib.ovidds.com/')"><img src="images/kkm_libkkm.png"
+                        alt="Library KKM"></div>
+                <div class="app-icon" onclick="openLink('http://spikpa.moh.gov.my/Home/SenaraiIns.aspx')"><img
+                        src="images/kkm_spikpa.png" alt="SPIKPA"></div>
+                <div class="app-icon" onclick="openLink('https://myhdw.moh.gov.my')"><img src="images/kkm_smrp.png"
+                        alt="SMRP"></div>
+                <div class="app-icon" onclick="openLink('https://bbis.moh.gov.my/#/login')"><img
+                        src="images/kkm_bbis.png" alt="BBIS"></div>
+                <div class="app-icon" onclick="openLink('https://wardviewer.bbis.moh.gov.my/#/login')"><img
+                        src="images/kkm_wardbbis.png" alt="Ward BBIS"></div>
+                <div class="app-icon" onclick="openLink('https://stbp.moh.gov.my/index.php/auth/main_login')"><img
+                        src="images/kkm_stbp.png" alt="STBP"></div>
+                <div class="app-icon" onclick="openLink('https://phcmalaysia.com/isprint-2-0/')"><img
+                        src="images/kkm_isprint.png" alt="i-Sprint"></div>
+                <div class="app-icon" onclick="openLink('http://epatuhv2.moh.gov.my/login')"><img
+                        src="images/kkm_epatuh.png" alt="e-Patuh"></div>
             </div>
         </section>
 
-        <!-- Section C -->
-        <section class="mb-12">
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div
-                    class="flex items-center justify-between mb-6 p-6 bg-gradient-to-r from-blue-50 to-gray-50 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300">
-                    <div class="flex items-center space-x-4">
-                        <div
-                            class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform duration-300" style="background-color: #203eb0;">
-                            <span class="material-symbols-outlined text-white text-2xl">settings_heart</span>
-                        </div>
-                        <div>
-                            <h2 class="text-xl font-bold text-gray-800 tracking-tight">Sistem Kerajaan</h2>
-                            <p class="text-sm text-gray-500">Portal Sistem Kerajaan</p>
-                        </div>
-                    </div>
+        <section id="section-c" class="card">
+            <div class="card-header">
+                <div class="card-icon" style="background-color: #203eb0;">
+                    <img src="icons/icons8-virus-50.png" alt="Sistem Kerajaan Icon">
                 </div>
-                <div class="grid grid-cols-6" style="gap: 5px;">
-                    <!-- Row 1 -->
-                    <div class="app-icon" onclick="openLink('https://mail.google.com/')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/out_emel.png" alt="mygovuc" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('https://hrmis2.eghrmis.gov.my/')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/out_hrmis.png" alt="hrmis" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon"
-                        onclick="openLink('https://epenyatagaji-laporan.anm.gov.my/Layouts/Login/Login.aspx')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/out_penyatagaji.png" alt="penyatagaji"
-                                class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('https://www.eperolehan.gov.my/')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/out_eperolehan.png" alt="eperolehan" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('https://mygpis.treasury.gov.my/loginpage.php')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/out_mygpis.png" alt="mygpis" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('http://sppakkm3.treasury.gov.my/portalSpa/login.cfm')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/out_sppa.png" alt="sppa" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <!-- Row 2 -->
-                    <div class="app-icon" onclick="openLink('https://bms.pekab40.com.my/')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/out_pekab40.png" alt="pekab40" class="w-full h-full object-contain">
-                        </div>
-                    </div>
-                    <div class="app-icon" onclick="openLink('https://evetting.cgso.gov.my/')">
-                        <div
-                            class="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-gray-200 transition-colors cursor-pointer overflow-hidden">
-                            <img src="images/out_evetting.png" alt="evetting" class="w-full h-full object-contain">
-                        </div>
-                    </div>
+                <div>
+                    <h2>Sistem Kerajaan</h2>
+                    <p class="subtitle">Portal Sistem Kerajaan</p>
                 </div>
+            </div>
+            <div class="icon-grid clearfix">
+                <div class="app-icon" onclick="openLink('https://mail.google.com/')"><img src="images/out_emel.png"
+                        alt="MyGovUC"></div>
+                <div class="app-icon" onclick="openLink('https://hrmis2.eghrmis.gov.my/')"><img
+                        src="images/out_hrmis.png" alt="HRMIS"></div>
+                <div class="app-icon"
+                    onclick="openLink('https://epenyatagaji-laporan.anm.gov.my/Layouts/Login/Login.aspx')"><img
+                        src="images/out_penyatagaji.png" alt="Penyata Gaji"></div>
+                <div class="app-icon" onclick="openLink('https://www.eperolehan.gov.my/')"><img
+                        src="images/out_eperolehan.png" alt="ePerolehan"></div>
+                <div class="app-icon" onclick="openLink('https://mygpis.treasury.gov.my/loginpage.php')"><img
+                        src="images/out_mygpis.png" alt="MyGPIS"></div>
+                <div class="app-icon" onclick="openLink('http://sppakkm3.treasury.gov.my/portalSpa/login.cfm')"><img
+                        src="images/out_sppa.png" alt="SPPA"></div>
+                <div class="app-icon" onclick="openLink('https://bms.pekab40.com.my/')"><img
+                        src="images/out_pekab40.png" alt="PekaB40"></div>
+                <div class="app-icon" onclick="openLink('https://evetting.cgso.gov.my/')"><img
+                        src="images/out_evetting.png" alt="e-Vetting"></div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute inset-0"
-                style="background-image: radial-gradient(circle at 25% 25%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 75% 75%, #1e40af 0%, transparent 50%);">
+    <footer id="contact" class="main-footer">
+        <div class="container">
+            <p>Hak Cipta Terpelihara © 2011 -
+                <script>document.write(new Date().getFullYear())</script> Hospital Sultanah Bahiyah.
+            </p>
+            <p>Dicipta untuk Bahagian Pengurusan Maklumat - BPM (HSB)</p>
+            <div class="footer-info">
+                <p>Laman web ini sesuai dilihat menggunakan Internet Explorer 11.0, Mozilla Firefox 40.0, Google Chrome
+                    43.0, Safari 8.0 atau versi yang lebih baru dengan resolusi 1024 x 768</p>
+                <span>Kemaskini terakhir: Ogos 2025</span>
+                <span>Versi 2.1</span>
             </div>
         </div>
-
-        <!-- Main Footer Content -->
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
-                <!-- Copyright Section -->
-                <div class="flex items-center justify-center space-x-4">
-                    <div class="text-center space-y-3">
-                        <!-- Copyright Notice -->
-                        <p class="text-white-600 text-sm font-medium tracking-wide leading-relaxed">
-                            Hak Cipta Terpelihara © 2011 -
-                            <script>document.write(new Date().getFullYear())</script>
-                            <span class="font-semibold">Hospital Sultanah Bahiyah</span>.
-                        </p>
-
-                        <!-- Design Credit -->
-                        <p
-                            class="text-text-700 text-sm font-semibold tracking-wider flex items-center justify-center space-x-2">
-                            <span>Dicipta untuk Bahagian Pengurusan Maklumat - BPM (HSB)</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional Info -->
-            <div class="mt-4 pt-4 border-t border-white/5">
-                <div
-                    class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 space-y-2 md:space-y-0">
-                    <p>Laman web ini sesuai dilihat menggunakan Internet Explorer 11.0, Mozilla Firefox 40.0, Google
-                        Chrome 43.0, Safari 8.0 atau versi yang lebih baru dengan resolusi 1024 x 768</p>
-                    <div class="flex items-center space-x-4">
-                        <span class="flex items-center space-x-1">
-                            <span class="w-1 h-1 bg-blue-400 rounded-full"></span>
-                            <span>Kemaskini terakhir: Julai 2025</span>
-                        </span>
-                        <span class="flex items-center space-x-1">
-                            <span class="w-1 h-1 bg-green-400 rounded-full"></span>
-                            <span>Versi 2.0</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Back to Top Button -->
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-            class="fixed bottom-6 right-6 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-50 flex items-center justify-center group"
-            aria-label="Kembali ke atas">
-            <span class="material-symbols-outlined text-lg group-hover:animate-bounce">keyboard_arrow_up</span>
-        </button>
     </footer>
+
+    <button onclick="window.scrollTo(0, 0)" class="back-to-top" aria-label="Kembali ke atas">
+        <span class="material-symbols-outlined">keyboard_arrow_up</span>
+    </button>
 
     <script>
         function openLink(url) {

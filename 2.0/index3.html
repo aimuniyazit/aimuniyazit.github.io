@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Intranet Hospital Sultanah Bahiyah</title>
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f9fafb;
+            color: #374151;
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(to right, #eff6ff, #ffffff, #eff6ff);
+            background: -webkit-linear-gradient(left, #eff6ff, #ffffff, #eff6ff);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+            position: fixed;
+            top: 0;
+            z-index: 50;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(37, 99, 235, 0.05), transparent, rgba(37, 99, 235, 0.05));
+            animation: pulse 2s infinite;
+            opacity: 0.5;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 5rem;
+        }
+
+        .logo-section {
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-right: -1rem;
+            /* Negative margin hack instead of gap */
+        }
+
+        .logo-section>* {
+            margin-right: 1rem;
+            /* Spacing between children instead of gap */
+        }
+
+        .logo-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8, #3730a3);
+            background: -webkit-linear-gradient(135deg, #2563eb, #1d4ed8, #3730a3);
+            border-radius: 0.75rem;
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: -webkit-transform 0.3s ease;
+            -moz-transition: -moz-transform 0.3s ease;
+            -o-transition: -o-transform 0.3s ease;
+            transition: transform 0.3s ease;
+            border: 2px solid rgba(59, 130, 246, 0.5);
+        }
+
+        .logo-icon:hover {
+            -webkit-transform: scale(1.05);
+            -moz-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .logo-text {
+            display: block;
+        }
+
+        .main-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            letter-spacing: -0.025em;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 0.875rem;
+            color: rgba(37, 99, 235, 0.8);
+            font-weight: 500;
+            letter-spacing: 0.025em;
+        }
+
+        .mobile-title {
+            display: none;
+        }
+
+        .mobile-main-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e40af;
+        }
+
+        .header-accent {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #3b82f6, #6366f1, #3b82f6);
+            opacity: 0.6;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-container {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .section-container:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(to right, #eff6ff, #f9fafb);
+            border-radius: 0.75rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .section-header:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header-content {
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-right: -1rem;
+        }
+
+        .section-header-content>* {
+            margin-right: 1rem;
+        }
+
+        .section-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.75rem;
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: -webkit-transform 0.3s ease;
+            -moz-transition: -moz-transform 0.3s ease;
+            -o-transition: -o-transform 0.3s ease;
+            transition: transform 0.3s ease;
+        }
+
+        .section-icon:hover {
+            -webkit-transform: scale(1.05);
+            -moz-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+
+        .icon-text {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e40af;
+            letter-spacing: -0.025em;
+        }
+
+        .section-desc {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        /* Icon Grid */
+        .icon-grid {
+            /* Flexbox layout for Chrome 30 compatibility */
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            padding: 20px;
+            width: 100%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .app-icon {
+            /* CSS Grid - let grid handle sizing */
+            width: 100%;
+            
+            /* Flexbox fallback for older browsers */
+            width: calc(100% / 6);
+            width: 16.666%; /* Fallback for older browsers */
+            min-width: 0;
+            max-width: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 5px;
+
+            /* Modern flexbox */
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+
+            /* Grid fallback */
+            width: 100%;
+            max-width: 100%;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .app-icon:hover {
+            transform: translateY(-4px) scale(1.02);
+            filter: brightness(1.05);
+        }
+
+        .app-icon:active {
+            transform: translateY(-2px) scale(0.98);
+            transition: all 0.1s ease;
+        }
+
+        .app-icon-container {
+            width: 160px;
+            height: 160px;
+            background-color: #f3f4f6;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 2px solid transparent;
+        }
+
+        .app-icon:hover .app-icon-container {
+            background-color: #e5e7eb;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .app-icon-img {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            -webkit-transition: -webkit-transform 0.3s ease;
+            -moz-transition: -moz-transform 0.3s ease;
+            -o-transition: -o-transform 0.3s ease;
+            transition: transform 0.3s ease;
+        }
+
+        .app-icon:hover .app-icon-img {
+            -webkit-transform: scale(1.05);
+            -moz-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-text {
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .footer-update {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Responsive Design */
+
+        /* Mobile Styles */
+        @media (max-width: 640px) {
+            .logo-text {
+                display: none;
+            }
+
+            .mobile-title {
+                display: block;
+            }
+
+            .main-content {
+                padding: 1rem 0.5rem;
+            }
+
+            .section-container {
+                padding: 1rem;
+            }
+
+            .section-header {
+                padding: 1rem;
+            }
+
+            .icon-grid {
+                /* Flexbox layout for Chrome 30 compatibility */
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-justify-content: flex-start;
+                -ms-flex-pack: start;
+                justify-content: flex-start;
+                padding: 10px 5px;
+            }
+
+            .app-icon {
+                /* CSS Grid - let grid handle sizing */
+                width: 100%;
+                
+                /* Flexbox fallback */
+                width: calc(100% / 6);
+                width: 16.666%; /* Fallback for older browsers */
+                min-width: 0;
+                max-width: none;
+                margin: 1px;
+            }
+
+            .app-icon-container {
+                width: 50px;
+                height: 50px;
+                padding: 8px;
+                margin: 0 auto;
+            }
+
+            .section-title {
+                font-size: 1rem;
+            }
+
+            .section-desc {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Small Mobile (481px to 640px) */
+        @media (min-width: 481px) and (max-width: 640px) {
+            .icon-grid {
+                /* Flexbox layout for Chrome 30 compatibility */
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-justify-content: flex-start;
+                -ms-flex-pack: start;
+                justify-content: flex-start;
+                padding: 15px 10px;
+            }
+
+            .app-icon {
+                /* CSS Grid - let grid handle sizing */
+                width: 100%;
+                
+                /* Flexbox fallback */
+                width: calc(100% / 6);
+                width: 16.666%; /* Fallback for older browsers */
+                min-width: 0;
+                max-width: none;
+                margin: 1px;
+            }
+
+            .app-icon-container {
+                width: 70px;
+                height: 70px;
+                padding: 10px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Tablet (641px to 768px) */
+        @media (min-width: 641px) and (max-width: 768px) {
+            .icon-grid {
+                /* Flexbox layout for Chrome 30 compatibility */
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-justify-content: flex-start;
+                -ms-flex-pack: start;
+                justify-content: flex-start;
+                padding: 20px 15px;
+            }
+
+            .app-icon {
+                /* CSS Grid - let grid handle sizing */
+                width: 100%;
+                
+                /* Flexbox fallback */
+                width: calc(100% / 6);
+                width: 16.666%; /* Fallback for older browsers */
+                min-width: 0;
+                max-width: none;
+                margin: 2px;
+            }
+
+            .app-icon-container {
+                width: 100px;
+                height: 100px;
+                padding: 12px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Large Tablet (769px to 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .icon-grid {
+                /* Flexbox layout for Chrome 30 compatibility */
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-justify-content: flex-start;
+                -ms-flex-pack: start;
+                justify-content: flex-start;
+                padding: 30px 20px;
+            }
+
+            .app-icon {
+                /* CSS Grid - let grid handle sizing */
+                width: 100%;
+                
+                /* Flexbox fallback */
+                width: calc(100% / 6);
+                width: 16.666%; /* Fallback for older browsers */
+                min-width: 0;
+                max-width: none;
+                margin: 3px;
+            }
+
+            .app-icon-container {
+                width: 120px;
+                height: 120px;
+                padding: 15px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Desktop (1025px to 1440px) */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .app-icon-container {
+                width: 140px;
+                height: 140px;
+                padding: 18px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Large Desktop (1441px+) */
+        @media (min-width: 1441px) {
+            .app-icon-container {
+                width: 160px;
+                height: 160px;
+                padding: 20px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Chrome 30 Compatibility */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            .header {
+                background: -webkit-linear-gradient(left, #eff6ff, #ffffff, #eff6ff);
+            }
+
+            .main-title {
+                background: -webkit-linear-gradient(left, #1e3a8a, #1e40af, #3730a3);
+                -webkit-background-clip: text;
+            }
+
+            .section-container {
+                background: -webkit-linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            }
+
+            .footer {
+                background: -webkit-linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .header {
+                position: static;
+                box-shadow: none;
+            }
+
+            .app-icon:hover {
+                transform: none;
+            }
+
+            .footer {
+                margin-top: 2rem;
+            }
+        }
+
+        /* Accessibility - Removed prefers-reduced-motion for Chrome 30 compatibility */
+
+        /* High DPI Displays */
+        @media (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 2dppx) {
+            .app-icon-img {
+                /* Removed image-rendering for Chrome 30 compatibility */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <!-- Subtle animated background pattern -->
+        <div class="header-bg"></div>
+
+        <!-- Main header content -->
+        <div class="header-container">
+            <div class="header-content">
+                <!-- Logo/Brand Section -->
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <img src="images/logohsb.png" alt="hsb" class="logo-img">
+                    </div>
+                    <div class="logo-text">
+                        <h1 class="main-title">Intranet</h1>
+                        <p class="subtitle">Hospital Sultananah Bahiyah (HSB)</p>
+                    </div>
+                </div>
+
+                <!-- Center Title for Mobile -->
+                <div class="mobile-title">
+                    <h1 class="mobile-main-title">Intranet HSB</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom accent line -->
+        <div class="header-accent"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Section A -->
+        <section class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-header-content">
+                        <div class="section-icon" style="background-color: #5c1a4d;">
+                            <span class="icon-text">🏛️</span>
+                        </div>
+                        <div class="section-info">
+                            <h2 class="section-title">Sistem Dalaman HSB</h2>
+                            <p class="section-desc">Portal Sistem Dalaman</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icon grid -->
+                <div class="icon-grid">
+                    <!-- Row 1 -->
+                    <a href="https://jknkedah.moh.gov.my/hsb/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_hsb.png" alt="hsb" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://jknkedah.moh.gov.my/hsb/edirektori/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_edirektori.png" alt="direktori" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://astwh0004/e-latihan" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_elatihan.png" alt="latihan" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://astwh0004/wardbooking1/view/index.php" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_wardbooking.png" alt="wardbooking" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://ast-intranet2/wardbooking1/intra-wad" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_intra.png" alt="medicalintra" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://astwh0004/e-wheelchair/login/index.php" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_ewheelchair.png" alt="wheelchair" class="app-icon-img">
+                        </div>
+                    </a>
+                    <!-- Row 2 -->
+                    <a href="http://ast-vlib" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_libhsb.png" alt="libraryhsb" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://astwh0004/e-cap/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_ecap.png" alt="ecap" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://astwh0004/e-anjungkasih/login/index.php" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_anjungkasih.png" alt="anjungkasih" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://ast-intranet2/unmanagedspecimen/login/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_specimen.png" alt="specimen" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://ast-intranet/internalauditpatologi" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_auditpato.png" alt="auditpatologi" class="app-icon-img">
+                        </div>
+                    </a>
+                    <!-- Row 3 -->
+                    <a href="https://sites.google.com/moh.gov.my/patologihsb" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_manupato.png" alt="manualpatologi" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://forms.gle/NGWN777y5cKLJjJG7" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_sekolah.png" alt="sekolah" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://ast-zfp.ast.hict.gov.my/zfp" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_zfp.png" alt="zfp" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://astwh0004/intranet/zfp.pdf" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/in_zfpguide.png" alt="zfpguide" class="app-icon-img">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section B -->
+        <section class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-header-content">
+                        <div class="section-icon" style="background-color: #008080;">
+                            <span class="icon-text">📊</span>
+                        </div>
+                        <div class="section-info">
+                            <h2 class="section-title">Sistem KKM</h2>
+                            <p class="section-desc">Portal Sistem KKM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="icon-grid">
+                    <!-- Row 1 -->
+                    <a href="http://casemix.moh.gov.my" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/kkm_casemix.png" alt="casemix" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://www.mycpd2.moh.gov.my" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/kkm_mycpd.png" alt="mycpd" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://sph.moh.gov.my" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/kkm_sph.png" alt="sph" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://enotifikasi.moh.gov.my/Login.aspx" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/kkm_enoti.png" alt="enotifikasi" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://vlib.ovidds.com/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/kkm_libkkm.png" alt="librarykkm" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://spikpa.moh.gov.my/Home/SenaraiIns.aspx" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/kkm_spikpa.png" alt="spikpa" class="app-icon-img">
+                        </div>
+                    </a>
+                    <!-- Row 2 -->
+                    <a href="https://myhdw.moh.gov.my" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/kkm_smrp.png" alt="smrp" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://bbis.moh.gov.my/#/login" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/kkm_bbis.png" alt="bbis" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://wardviewer.bbis.moh.gov.my/#/login" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/kkm_wardbbis.png" alt="wardbbis" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://stbp.moh.gov.my/index.php/auth/main_login" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/kkm_stbp.png" alt="stbp" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://phcmalaysia.com/isprint-2-0/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/kkm_isprint.png" alt="isprint" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="http://epatuhv2.moh.gov.my/login" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/kkm_epatuh.png" alt="epatuh" class="app-icon-img">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section C -->
+        <section class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-header-content">
+                        <div class="section-icon" style="background-color: #203eb0;">
+                            <span class="icon-text">⚙️</span>
+                        </div>
+                        <div class="section-info">
+                            <h2 class="section-title">Sistem Kerajaan</h2>
+                            <p class="section-desc">Portal Sistem Kerajaan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="icon-grid">
+                    <!-- Row 1 -->
+                    <a href="https://mail.google.com/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/out_emel.png" alt="emel" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://hrmis.eghrmis.gov.my/hrmis/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/out_hrmis.png" alt="hrmis" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://esp.eghrmis.gov.my/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/out_penyatagaji.png" alt="penyatagaji" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://www.eperolehan.gov.my/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/out_eperolehan.png" alt="eperolehan" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://mygpis.gov.my/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/out_mygpis.png" alt="mygpis" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://sppa.gov.my/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/out_sppa.png" alt="sppa" class="app-icon-img">
+                        </div>
+                    </a>
+                    <!-- Row 2 -->
+                    <a href="https://pekab40.gov.my/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/out_pekab40.png" alt="pekab40" class="app-icon-img">
+                        </div>
+                    </a>
+                    <a href="https://evetting.gov.my/" target="_blank" class="app-icon">
+                        <div class="app-icon-container">
+                            <img src="images/out_evetting.png" alt="evetting" class="app-icon-img">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bg"></div>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p class="footer-text">&copy; <span id="current-year">2024</span> Hospital Sultanah Bahiyah. All rights
+                    reserved.</p>
+                <p class="footer-update">Last updated: December 2024</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

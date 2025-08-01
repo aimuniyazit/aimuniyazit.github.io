@@ -1,0 +1,352 @@
+/* --- Basic Reset & Body Styles --- */
+body,
+h1,
+h2,
+p,
+div,
+section,
+header,
+footer,
+nav,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    /* Web-safe fonts for max compatibility */
+    color: #333;
+    /* Box-sizing is crucial for float layouts to work predictably */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #f8fafc;
+}
+
+body {
+    background-color: #f8fafc;
+    min-height: 100vh;
+}
+
+/* A clearfix hack is essential for containing floated elements. */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* --- Layout Container --- */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- Legacy Header (Float-based) --- */
+.main-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-brand {
+    float: left;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    /* Padding is used for vertical alignment in float layouts */
+    padding: 16px 0;
+}
+
+.header-brand .logo-icon {
+    float: left;
+    width: 48px;
+    height: 48px;
+}
+
+.header-brand .logo-icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.header-brand .brand-text {
+    float: left;
+    margin-left: 15px;
+    /* Adjust padding to vertically align text with the icon */
+    padding-top: 5px;
+}
+
+.header-brand .brand-text h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+.main-nav {
+    float: right;
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav li {
+    float: left;
+    margin-left: 10px;
+}
+
+.main-nav a {
+    display: block;
+    padding: 29px 15px;
+    /* Padding for vertical alignment */
+    text-decoration: none;
+    color: #374151;
+    font-weight: bold;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover {
+    color: #3b82f6;
+}
+
+
+/* --- Main Content & Cards --- */
+main.container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.card {
+    background-color: #fff;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin-bottom: 48px;
+}
+
+.card-header {
+    display: table;
+    margin-bottom: 24px;
+    padding: 24px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.card-header .card-icon {
+    display: table-cell;
+    vertical-align: middle;
+    width: 48px;
+    height: 48px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    line-height: 48px;
+}
+
+.card-header .card-icon .material-icons,
+.card-header .card-icon .material-symbols-outlined {
+    font-size: 24px;
+    line-height: 48px;
+}
+
+.card-header div {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 16px;
+}
+
+.card-header h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.card-header p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* --- Icon Grid (Float-based) --- */
+.icon-grid {
+    text-align: center;
+}
+
+.app-icon {
+    float: left;
+    width: 16.66%;
+    /* Default: 6 columns */
+    padding: 5px;
+    -webkit-transition: -webkit-transform 0.2s ease;
+    transition: transform 0.2s ease;
+}
+
+.app-icon:hover {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+}
+
+.app-icon img {
+    width: 100%;
+    height: auto;
+    max-width: 160px;
+    max-height: 160px;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.app-icon img:hover {
+    background-color: #e5e7eb;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background: #0f172a;
+    color: #fff;
+    padding: 48px 0;
+    text-align: center;
+}
+
+.main-footer p {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-info {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.footer-info span {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* --- Back to Top Button --- */
+.back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    background-color: #2563eb;
+    color: #fff;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 50;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: center;
+}
+
+.back-to-top:hover {
+    background-color: #1d4ed8;
+}
+
+/* --- Responsive Design --- */
+/* Medium Desktops (e.g., 1366x768) */
+@media (max-width: 1366px) {
+    .app-icon {
+        width: 20%;
+        /* 5 columns */
+    }
+}
+
+/* Small Laptops (e.g., 1024x768) */
+@media (max-width: 1024px) {
+    .app-icon {
+        width: 25%;
+        /* 4 columns */
+    }
+}
+
+/* Tablets & Below */
+@media (max-width: 768px) {
+
+    /* On smaller screens, hide the navigation to prevent messy wrapping */
+    .main-nav {
+        display: none;
+    }
+
+    .header-brand {
+        float: none;
+        display: table;
+        /* Use table display for simple centering */
+        margin: 0 auto;
+    }
+
+    .app-icon {
+        width: 33.33%;
+        /* 3 columns */
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    .app-icon {
+        width: 50%;
+        /* 2 columns */
+    }
+}
+
+/*
+  Replace your old .card-icon and .card-icon img rules with these
+  for perfect centering.
+*/
+
+.card-icon {
+    /* Set the container to position: relative */
+    position: relative;
+
+    /* These are your existing styles */
+    display: table-cell;
+    vertical-align: middle;
+    width: 48px;
+    height: 48px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    color: white;
+}
+
+.card-icon img {
+    /* Set the icon size */
+    width: 28px;
+    height: 28px;
+
+    /* Make the black icon white */
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+
+    /* === New rules for centering === */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
